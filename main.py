@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw, ImageFilter
 import numpy as np
 
 filepath = "input/"
-imgname = "thumbsup.png"
+imgname = "thumbsup"
 frame = 20
 hsvL = np.array([0, 50, 50])
 hsvU = np.array([180, 255, 255])
@@ -13,7 +13,7 @@ check = True
 
 def main():
 
-    img = cv2.imread("{0}{1}".format(filepath, imgname))
+    img = cv2.imread("{0}{1}.png".format(filepath, imgname))
 
     mask = hsvExtraction(img, hsvL, hsvU)
     masked_img = cv2.bitwise_and(img, img, mask=mask)
@@ -30,9 +30,9 @@ def main():
 
     pil_imgs = all_cv2pil(imgs)
 
-    pil_img = Image.open("{0}{1}".format(filepath, imgname))
+    pil_img = Image.open("{0}{1}.png".format(filepath, imgname))
 
-    shapes = cv2.imread("{0}{1}".format(filepath, imgname), cv2.IMREAD_UNCHANGED).shape[2]
+    shapes = cv2.imread("{0}{1}.png".format(filepath, imgname), cv2.IMREAD_UNCHANGED).shape[2]
 
     if shapes == 4:
         alpha = pil_img.split()[3]
