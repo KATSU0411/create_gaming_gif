@@ -101,11 +101,11 @@ def save_gif_with_alpha(imgs, mask):
         pasted.append(img)
 
     # imgs[0].save("out.gif", save_all=True, append_images=imgs[1:], duration=80, loop=0, optimize=False)
-    pasted[0].save("output/{0}gaming_{1}.gif".format(filepath, imgname), save_all=True, append_images=pasted[1:], duration=duration, loop=0, optimize=False, transparency=255)
+    pasted[0].save("output/gaming_{0}.gif".format(imgname), save_all=True, append_images=pasted[1:], duration=duration, loop=0, optimize=False, transparency=255)
 
 def save_gif(imgs):
     # imgs[0].save("out.gif", save_all=True, append_images=imgs[1:], duration=80, loop=0, optimize=False)
-    imgs[0].save("output/{0}gaming_{1}.gif".format(filepath, imgname), save_all=True, append_images=imgs[1:], duration=duration, loop=0, optimize=False)
+    imgs[0].save("output/gaming_{0}.gif".format(imgname), save_all=True, append_images=imgs[1:], duration=duration, loop=0, optimize=False)
 
 def cv2pil(img):
     ''' OpenCV型 -> PIL型 '''
