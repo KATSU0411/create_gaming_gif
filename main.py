@@ -9,7 +9,7 @@ hsvL = np.array([0, 50, 50])
 hsvU = np.array([180, 255, 255])
 duration = 80
 
-check = True
+check = False
 
 def main():
 
